@@ -1,0 +1,15 @@
+{
+  "name": "wazum/seo-canonical-guard",
+  "license": "GPL-3.0",
+  "description": "Prevent unwanted parameters in canonical URL",
+  "require": {
+    "php": ">=7.0.0",
+    "typo3/cms-seo": "^9.5"
+  },
+  "type": "typo3-cms-extension",
+  "autoload": {
+    "psr-4": {
+      "Wazum\\SeoCanonicalGuard\\": "Classes"
+    }
+  }
+}

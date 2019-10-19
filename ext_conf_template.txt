@@ -1,0 +1,4 @@
+# cat=basic; type=boolean; label=Include active plugin namespaces
+include_plugin_namespaces = 1
+# cat=basic; type=string; label=Whitelist for allowed URL parameters (see README for format)
+whitelist =
