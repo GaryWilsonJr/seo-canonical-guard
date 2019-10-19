@@ -8,18 +8,18 @@ This extension helps to prevent unwanted parameters in the canonical URL.
 
 ### Extension plugin namespaces
 
-By default parameters within the namespaces from active extensions (e.g. `tx_news_pi1`) are allowed.
+By default parameters within the namespaces from active extensions (e.g. `tx_news_pi1`) using Extbase are allowed.
 This still allows parameters not used by these extensions like `tx_news_pi1[wtf]=seo`.
-If you need to be very strict, disable the setting and use the explicit whitelist.
+If you need to include third-party parameters or parameters for extensions based on `\TYPO3\CMS\Frontend\Plugin\AbstractPlugin` (aka _pi based_) or need to be very strict, disable the setting and/or use the explicit whitelist.
 
 ### Explicit whitelist
 
-In addition to or as replacement for the allowed namespaces from active extension plugins, you can set a whitelist if you need to allow additional parameters or want to specify exactly which parameters are allowed.
-Go to Admin Tools > Settings > Extension Configuration and select _seo_canonical_guard_ and set the allowed parameter namespaces as follows:
+In addition to or as replacement for the allowed namespaces from active extension Extbase plugins (see above), you can set a whitelist if you need to allow additional parameters or want to specify exactly which parameters are allowed.
+Go to Admin Tools > Settings > Extension Configuration and select _seo_canonical_guard_ and set the allowed parameters or parameter namespaces as follows:
 
     parameter1, parameter2, namespace_xy\[(.*?)\], namespace_yz\[(explicit1|explicit2)\]
 
-You can add a list of single parameters or use regular expressions (escape special characters!).
+You can add a list of single parameters or use regular expressions (you can omit the `/…/` around, but you have to escape special characters).
 
 ## Requirements
 
