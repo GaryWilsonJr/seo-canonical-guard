@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Wazum\SeoCanonicalGuard\Seo\Canonical;
@@ -17,9 +18,6 @@ use TYPO3\CMS\Frontend\Utility\CanonicalizationUtility;
  */
 class CanonicalGenerator extends \TYPO3\CMS\Seo\Canonical\CanonicalGenerator
 {
-    /**
-     * @return string
-     */
     protected function checkDefaultCanonical(): string
     {
         // Returns keys like 'id' or 'cHash'
@@ -42,7 +40,7 @@ class CanonicalGenerator extends \TYPO3\CMS\Seo\Canonical\CanonicalGenerator
             $defaultExclude,
             array_filter(
                 $parameters,
-                static function($parameter) use ($allowed) {
+                static function ($parameter) use ($allowed) {
                     return !self::isParameterAllowed($parameter, $allowed);
                 }
             )
@@ -59,18 +57,12 @@ class CanonicalGenerator extends \TYPO3\CMS\Seo\Canonical\CanonicalGenerator
         ]);
     }
 
-    /**
-     * @return array
-     */
     protected function getQueryParameters(): array
     {
         return ($GLOBALS['TYPO3_REQUEST'] instanceof ServerRequestInterface) ?
             $GLOBALS['TYPO3_REQUEST']->getQueryParams() : [];
     }
 
-    /**
-     * @return array
-     */
     protected function getAllowedPluginNamespaces(): array
     {
         $namespaces = [];
@@ -88,9 +80,6 @@ class CanonicalGenerator extends \TYPO3\CMS\Seo\Canonical\CanonicalGenerator
         return $namespaces;
     }
 
-    /**
-     * @return array
-     */
     protected function getWhitelist(): array
     {
         $whitelist = [];
@@ -107,9 +96,6 @@ class CanonicalGenerator extends \TYPO3\CMS\Seo\Canonical\CanonicalGenerator
         return $whitelist;
     }
 
-    /**
-     * @return bool
-     */
     protected function shouldIncludePluginNamespaces(): bool
     {
         $include = false;
@@ -123,11 +109,6 @@ class CanonicalGenerator extends \TYPO3\CMS\Seo\Canonical\CanonicalGenerator
         return $include;
     }
 
-    /**
-     * @param string $parameter
-     * @param array $allowed
-     * @return bool
-     */
     protected static function isParameterAllowed(string $parameter, array $allowed): bool
     {
         foreach ($allowed as $rule) {
@@ -137,7 +118,7 @@ class CanonicalGenerator extends \TYPO3\CMS\Seo\Canonical\CanonicalGenerator
             }
 
             // Create regular expression pattern
-            if ($rule[0] !== '/' || $rule[strlen($rule)-1] !== '/') {
+            if ($rule[0] !== '/' || $rule[strlen($rule) - 1] !== '/') {
                 // We assume there's no / in a parameter name, so no escaping
                 $rule = "/$rule/";
             }
