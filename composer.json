@@ -11,5 +11,10 @@
     "psr-4": {
       "Wazum\\SeoCanonicalGuard\\": "Classes"
     }
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "seo_canonical_guard"
+    }
   }
 }
