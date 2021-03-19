@@ -3,13 +3,18 @@
   "license": "GPL-3.0",
   "description": "Prevent unwanted parameters in canonical URL",
   "require": {
-    "php": ">=7.0.0",
-    "typo3/cms-seo": "^9.5 || ^10.4"
+    "php": ">=7.0",
+    "typo3/cms-seo":  "^9.5 || ^10.4"
   },
   "type": "typo3-cms-extension",
   "autoload": {
     "psr-4": {
       "Wazum\\SeoCanonicalGuard\\": "Classes"
+    }
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "seo_canonical_guard"
     }
   }
 }

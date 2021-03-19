@@ -1,6 +1,6 @@
 <?php
 
-$EM_CONF[$_EXTKEY] = [
+$EM_CONF['seo_canonical_guard'] = [
     'title' => 'SEO Canonical URL guard',
     'description' => 'Prevent unwanted parameters in canonical URL',
     'category' => 'frontend',
@@ -9,7 +9,7 @@ $EM_CONF[$_EXTKEY] = [
     'state' => 'stable',
     'clearCacheOnLoad' => true,
     'author_company' => 'wazum.com',
-    'version' => '1.0.1',
+    'version' => '1.1.0',
     'constraints' => [
         'depends' => [
             'typo3' => '9.5.0-10.4.99',
